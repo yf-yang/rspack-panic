@@ -1,0 +1,43 @@
+{
+  "name": "@whatever/eslint-config",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./eslint.config.js",
+    "./ruleDetails/*": "./plugins/ruleDetails/*"
+  },
+  "scripts": {
+    "check": "pnpm spellcheck && pnpm lint",
+    "lint": "TIMING=1 eslint '**/*.{ts,js,tsx,jsx}' --cache --report-unused-disable-directives",
+    "lint:fix": "pnpm lint --fix",
+    "lint:debug": "DEBUG=* pnpm lint",
+    "spellcheck": "cspell '**/*.{ts,js,tsx,jsx,md,txt}'"
+  },
+  "dependencies": {
+    "@eslint-community/eslint-plugin-eslint-comments": "^4.5.0",
+    "@eslint/compat": "^1.2.9",
+    "@eslint/eslintrc": "^3.3.1",
+    "@eslint/js": "^9.26.0",
+    "@stylistic/eslint-plugin-js": "^4.2.0",
+    "@typescript-eslint/parser": "^8.32.0",
+    "dedent": "^1.6.0",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-import-resolver-typescript": "^4.3.4",
+    "eslint-plugin-better-tailwindcss": "^3.1.0",
+    "eslint-plugin-comment-length": "^2.2.1",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-jest": "^28.11.0",
+    "eslint-plugin-prettier": "^5.4.0",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-compiler": "19.1.0-rc.1",
+    "eslint-plugin-react-hooks": "5.2.0",
+    "eslint-plugin-storybook": "^0.12.0",
+    "eslint-plugin-unicorn": "^59.0.1",
+    "prettier-plugin-jsdoc": "^1.3.2",
+    "typescript-eslint": "^8.32.0"
+  },
+  "devDependencies": {
+    "@rslib/core": "^0.10.1"
+  }
+}

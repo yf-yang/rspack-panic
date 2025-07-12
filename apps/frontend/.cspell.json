@@ -1,0 +1,11 @@
+{
+  "words": [
+    "shadcn"
+  ],
+  "ignorePaths": [
+    "components.json"
+  ],
+  "import": [
+    "../../.cspell.json"
+  ]
+}

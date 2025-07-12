@@ -1,0 +1,39 @@
+{
+  "name": "@whatever/common",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": {
+      "source": "./src/index.ts",
+      "types": [
+        "./dist/index.d.ts",
+        "./src/index.ts"
+      ],
+      "require": "./dist/index.cjs",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "check": "pnpm spellcheck && pnpm lint",
+    "lint": "TIMING=1 eslint '**/*.{ts,js,tsx,jsx}' --cache --report-unused-disable-directives",
+    "lint:fix": "pnpm lint --fix",
+    "lint:debug": "DEBUG=* pnpm lint",
+    "spellcheck": "cspell '**/*.{ts,js,tsx,jsx,md,txt}'",
+    "clean": "rm -rf dist",
+    "dev": "rslib build --watch",
+    "build": "rslib build"
+  },
+  "devDependencies": {
+    "@rslib/core": "^0.10.1",
+    "@types/node": "^22.13.10",
+    "@whatever/macros": "workspace:^",
+    "utility-types": "^3.11.0"
+  },
+  "dependencies": {
+    "core-js": "^3.41.0"
+  }
+}

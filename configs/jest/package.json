@@ -1,0 +1,18 @@
+{
+  "name": "@whatever/jest-config",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./jest.config.js"
+  },
+  "devDependencies": {
+    "@jest/types": "^29.6.3",
+    "@rslib/core": "^0.10.1",
+    "@swc/types": "^0.1.21"
+  },
+  "dependencies": {
+    "@swc/jest": "^0.2.38",
+    "jest-transform-stub": "^2.0.0"
+  }
+}

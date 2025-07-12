@@ -1,0 +1,43 @@
+{
+  "words": [
+    "bson",
+    "dotenv",
+    "fastapi",
+    "mongosh",
+    "pyproject",
+    "rsbuild"
+  ],
+  "ignorePaths": [
+    "*.code-workspace",
+    "*rc.(js|cjs|mjs|ts)",
+    "*.json",
+    "*.config.(js|cjs|mjs|ts)",
+    "configs",
+    "coverage",
+    "build",
+    "dist",
+    ".storybook"
+  ],
+  "ignoreRegExpList": [
+    "comment-tags"
+  ],
+  "patterns": [
+    {
+      "name": "comment-tags",
+      "pattern": "/(?:TODO|BUG|FIXME|XXX|HACK|NOTE)\\([-\\w\\.\\@,\\s\\&]*\\)/g"
+    }
+  ],
+  "languageSettings": [
+    {
+      // use with Markdown files
+      "languageId": "markdown",
+      // Exclude code.
+      "ignoreRegExpList": [
+        "/^\\s*```[\\s\\S]*?^\\s*```/gm"
+      ]
+    }
+  ],
+  "import": [
+    "cspell-node.config.cjs"
+  ]
+}

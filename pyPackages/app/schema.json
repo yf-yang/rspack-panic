@@ -1,0 +1,21 @@
+{
+  "description": "This is a dummy class to export classes to the frontend.\nTo export keys, declare as dummy_key's union type.",
+  "properties": {
+    "dummy_key": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "integer"
+        }
+      ],
+      "title": "Dummy Key"
+    }
+  },
+  "required": [
+    "dummy_key"
+  ],
+  "title": "_Schema",
+  "type": "object"
+}

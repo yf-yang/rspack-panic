@@ -1,0 +1,14 @@
+{
+  "extends": "@whatever/ts-config/base",
+  "compilerOptions": {
+    "rootDir": "src",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    },
+  },
+  "include": [
+    "types.d.ts"
+  ],
+}

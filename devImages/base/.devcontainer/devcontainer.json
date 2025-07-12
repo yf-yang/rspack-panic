@@ -1,0 +1,43 @@
+{
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {},
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "latest"
+    },
+    "ghcr.io/devcontainers-extra/features/pre-commit:2": {},
+    "ghcr.io/jsburckhardt/devcontainer-features/uv:1": {},
+    "ghcr.io/devcontainers-extra/features/zsh-plugins:0": {
+      // Auto completion support:
+      //   - nvm
+      //   - pip
+      //   - uv
+      // aliases: the `als` command https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/aliases
+      // common-aliases: more aliases https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/common-aliases
+      // git-commit: commands for conventional commit https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git-commit
+      // git-auto-fetch (x): automatically run git fetch every 60 seconds
+      // history: commands to search command history https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/history
+      // pre-commit: commands to run pre commit hooks https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/pre-commit
+      // python: aliases for python https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/python
+      // z: the `z` command that searches previously visited path https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/z
+      "plugins": "aliases common-aliases git-commit history nvm pip pre-commit z zsh-syntax-highlighting uv",
+      // zsh command line syntax highlighting
+      "omzPlugins": "https://github.com/zsh-users/zsh-syntax-highlighting.git"
+    },
+    "ghcr.io/stuartleeks/dev-container-features/shell-history:0": {},
+    "ghcr.io/devcontainers-extra/features/neovim-apt-get:1": {},
+    "ghcr.io/devcontainers-extra/features/pnpm:2": {},
+    "ghcr.io/joshuanianji/devcontainer-features/mount-pnpm-store:1": {},
+    "ghcr.io/anthropics/devcontainer-features/claude-code:1": {}
+    // "./features/customFeature": {}
+  },
+  "overrideFeatureInstallOrder": [
+    "ghcr.io/devcontainers-extra/features/pnpm:2", 
+    "ghcr.io/joshuanianji/devcontainer-features/mount-pnpm-store",
+    "ghcr.io/anthropics/devcontainer-features/claude-code"
+  ],
+  "remoteUser": "root"
+}
