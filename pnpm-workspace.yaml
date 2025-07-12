@@ -3,3 +3,5 @@ packages:
   - "packages/**"
   - "apps/*"
   - "!**/tests/**"
+patchedDependencies:
+  rsbuild-plugin-react-router: patches/rsbuild-plugin-react-router.patch

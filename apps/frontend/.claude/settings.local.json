@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find:*)",
+      "Bash(ls:*)",
+      "WebFetch(domain:js.langchain.com)",
+      "Bash(pnpm add:*)",
+      "Bash(pnpm dev:*)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(pnpm typecheck:*)",
+      "Bash(pnpm shadcn add:*)",
+      "Bash(grep:*)"
+    ],
+    "deny": []
+  }
+}

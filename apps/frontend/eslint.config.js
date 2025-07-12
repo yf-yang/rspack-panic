@@ -15,7 +15,7 @@ export default tseslintConfig(
       // Keep shadcn codes untouched
       'src/components/shadcn-ui/**',
       // Generated schema file should be ignored
-      'src/apis/**/*.d.ts',
+      'src/apis/types/generated/**/*.ts',
     ],
   },
   {

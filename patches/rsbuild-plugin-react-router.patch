@@ -1,0 +1,78 @@
+diff --git a/dist/index.cjs b/dist/index.cjs
+index 440ed0df4961f9da61480318705019401983cc84..545be212f98f1ba10f33d9bf6e75ba83cffe93d5 100644
+--- a/dist/index.cjs
++++ b/dist/index.cjs
+@@ -325,7 +325,7 @@ export { ${output.exports.map((exp)=>'default' === exp ? 'defaultExport as defau
+                     let { $ } = await Promise.resolve().then(__webpack_require__.bind(__webpack_require__, "execa"));
+                     $`npx --yes react-router typegen`;
+                 });
+-                let jiti = (0, external_jiti_namespaceObject.createJiti)(process.cwd()), { appDirectory = 'app', basename = '/', buildDirectory = 'build', ssr = !0 } = await jiti.import('./react-router.config.ts', {
++                let jiti = (0, external_jiti_namespaceObject.createJiti)(process.cwd()), { appDirectory = 'app', basename = '/', buildDirectory = 'build', ssr = !0, routeDiscovery = { mode: 'lazy', manifestPath: '/__manifest' } } = await jiti.import('./react-router.config.ts', {
+                     default: !0
+                 }).catch(()=>(console.error('No react-router.config.ts found, using default configuration.'), {})), routesPath = findEntryFile((0, external_pathe_namespaceObject.resolve)(appDirectory, 'routes')), routeConfig = await jiti.import(routesPath, {
+                     default: !0
+@@ -371,7 +371,8 @@ export { ${output.exports.map((exp)=>'default' === exp ? 'defaultExport as defau
+                         basename,
+                         appDirectory,
+                         ssr,
+-                        federation: options.federation
++                        federation: options.federation,
++                        routeDiscovery,
+                     }).federation ? `
+     // Create a module cache to store the dynamically imported module
+     let entryServerModule = null;
+@@ -434,6 +435,7 @@ export { ${output.exports.map((exp)=>'default' === exp ? 'defaultExport as defau
+     export const future = ${JSON.stringify({})};
+     export const isSpaMode = ${!options1.ssr};
+     export const ssr = ${options1.ssr};
++    export const routeDiscovery = ${JSON.stringify(options1.routeDiscovery)};
+     export const publicPath = "/";
+     export const prerender = [];
+     export const entry = { module: entryServer };
+@@ -464,6 +466,7 @@ export { ${output.exports.map((exp)=>'default' === exp ? 'defaultExport as defau
+     export const future = ${JSON.stringify({})};
+     export const isSpaMode = ${!options1.ssr};
+     export const ssr = ${options1.ssr};
++    export const routeDiscovery = ${JSON.stringify(options1.routeDiscovery)};
+     export const prerender = [];
+     export const publicPath = "/";
+     export const entry = { module: entryServer };
+diff --git a/dist/index.js b/dist/index.js
+index c4a4931f02f0f6d4a9c6a06b9122492aff446fb5..07876034c9c5809e854bc29d72fdb70e0e858591 100644
+--- a/dist/index.js
++++ b/dist/index.js
+@@ -310,7 +310,7 @@ let pluginReactRouter = (options = {})=>({
+                 let { $ } = await import("execa");
+                 $`npx --yes react-router typegen`;
+             });
+-            let jiti = (0, __WEBPACK_EXTERNAL_MODULE_jiti__.createJiti)(process.cwd()), { appDirectory = 'app', basename = '/', buildDirectory = 'build', ssr = !0 } = await jiti.import('./react-router.config.ts', {
++            let jiti = (0, __WEBPACK_EXTERNAL_MODULE_jiti__.createJiti)(process.cwd()), { appDirectory = 'app', basename = '/', buildDirectory = 'build', ssr = !0, routeDiscovery = { mode: 'lazy', manifestPath: '/__manifest' } } = await jiti.import('./react-router.config.ts', {
+                 default: !0
+             }).catch(()=>(console.error('No react-router.config.ts found, using default configuration.'), {})), routesPath = findEntryFile((0, __WEBPACK_EXTERNAL_MODULE_pathe__.resolve)(appDirectory, 'routes')), routeConfig = await jiti.import(routesPath, {
+                 default: !0
+@@ -356,7 +356,8 @@ let pluginReactRouter = (options = {})=>({
+                     basename,
+                     appDirectory,
+                     ssr,
+-                    federation: options.federation
++                    federation: options.federation,
++                    routeDiscovery,
+                 }).federation ? `
+     // Create a module cache to store the dynamically imported module
+     let entryServerModule = null;
+@@ -419,6 +420,7 @@ let pluginReactRouter = (options = {})=>({
+     export const future = ${JSON.stringify({})};
+     export const isSpaMode = ${!options1.ssr};
+     export const ssr = ${options1.ssr};
++    export const routeDiscovery = ${JSON.stringify(options1.routeDiscovery)};
+     export const publicPath = "/";
+     export const prerender = [];
+     export const entry = { module: entryServer };
+@@ -449,6 +451,7 @@ let pluginReactRouter = (options = {})=>({
+     export const future = ${JSON.stringify({})};
+     export const isSpaMode = ${!options1.ssr};
+     export const ssr = ${options1.ssr};
++    export const routeDiscovery = ${JSON.stringify(options1.routeDiscovery)};
+     export const prerender = [];
+     export const publicPath = "/";
+     export const entry = { module: entryServer };
